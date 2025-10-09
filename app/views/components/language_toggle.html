@@ -52,6 +52,9 @@
 
 {% endblock %}
 
+ <div class="language-toggle">
+
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -87,13 +90,68 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-      Language toggle
-    </h1>
+   <h1 class="govuk-heading-xl">
+  Language toggle
+</h1>
+
+<div class="app-example__preview">
+  <div class="govuk-form-group">
+
+    <!-- Single outer box (tabs container) with toggle at top -->
+    <div class="tabs-box">
+
+      <!-- Toggle bar at top of box -->
+      <div class="toggle-bar">
+        <ul id="navigation" class="language-toggle">
+          <li class="language-toggle__item language-toggle__item--inactive" id="eng">
+            English
+          </li>
+          <li class="language-toggle__separator">|</li>
+          <li class="language-toggle__item language-toggle__item--active" id="cym">
+            Cymraeg
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tabs inside the same box -->
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">Options</h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#html">HTML</a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="html">
+          <pre><code class="language-html">
+&lt;div class="toggle-bar"&gt;
+  &lt;ul id="navigation" class="language-toggle"&gt;
+    &lt;li class="language-toggle__item language-toggle__item--inactive" id="eng"&gt;English&lt;/li&gt;
+    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
+    &lt;li class="language-toggle__item language-toggle__item--active" id="cym"&gt;Cymraeg&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+          </code></pre>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
+          <pre><code class="language-javascript">{{ "{{ languageToggle({ active: 'cy' }) }}" }}</code></pre>
+        </div>
+      </div>
+
+
+
+
+
+
 
 
   
   </div>
 </div>
+
 
 {% endblock %}

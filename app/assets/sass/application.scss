@@ -71,4 +71,71 @@
     padding-bottom: 20px;
 }
 
+.tabs-box {
+  background-color: #ffffff;
+  border: 1px solid #bfc1c3;
+  border-radius: 4px;
+  overflow: hidden;
+  /* you may want margin adjustments around it */
+}
+
+/* Toggle bar padding and separation line */
+.toggle-bar {
+  background-color: #ffffff;
+  padding: 0.75em 1em;              /* more vertical padding for breathing room */
+  border-bottom: 1px solid #bfc1c3;
+}
+
+/* Style for the toggle list inside toggle-bar */
+.language-toggle {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.language-toggle__item {
+  padding: 0.5em 0.75em;              /* add horizontal + vertical padding */
+  color: #0b0c0c;                     /* black text for non‑active */
+}
+
+.language-toggle__item--active {
+  color: #1d70b8;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.language-toggle__item--inactive {
+  color: #0b0c0c;                      /* black, not grey */
+  text-decoration: none;
+}
+
+.language-toggle__separator {
+  margin: 0 0.75em;
+  color: #0b0c0c;
+}
+
+/* Padding inside tabs content area */
+.tabs-box .govuk-tabs {
+  padding: 1em;
+}
+
+/* Ensure code inside HTML tab fits / wraps */
+.govuk-tabs__panel code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  display: block;
+  overflow-x: auto;
+}
+
+
+
+
+
+
+
+
+
   

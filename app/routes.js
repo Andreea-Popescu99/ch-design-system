@@ -5,3 +5,7 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+
+router.get('/language-toggle', function (req, res) {
+  res.render('language-toggle');
+});

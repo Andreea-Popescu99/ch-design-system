@@ -12,3 +12,5 @@ window.MOJFrontend.initAll();
 function reload() {
   location.reload();
 }
+
+
