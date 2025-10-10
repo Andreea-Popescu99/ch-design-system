@@ -4,3 +4,51 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+
+  <!-- Prism core and theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+  <!-- REQUIRED for Nunjucks/Twig highlighting to work -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup-templating.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-twig.min.js"></script>
+
+  <!-- Optional: If you prefer to use prism-nunjucks.min.js, it's an alias to Twig -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-nunjucks.min.js"></script> -->
+
+  <!-- Re-highlight + copy button logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      Prism.highlightAll();
+
+      document.querySelectorAll('.copy-button').forEach(button => {
+        button.addEventListener('click', async () => {
+          const targetId = button.getAttribute('data-copy-target');
+          const codeElement = document.getElementById(targetId);
+
+          if (codeElement) {
+            try {
+              const text = codeElement.innerText.trim();
+              await navigator.clipboard.writeText(text);
+              button.textContent = 'Copied!';
+              setTimeout(() => button.textContent = 'Copy code', 2000);
+            } catch (err) {
+              console.error('Copy failed', err);
+              button.textContent = 'Copy failed';
+            }
+          }
+        });
+      });
+    });
+  </script>
+{% endblock %}
+
+

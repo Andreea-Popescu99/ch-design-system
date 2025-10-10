@@ -90,57 +90,98 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
 
-   <h1 class="govuk-heading-xl">
-  Language toggle
-</h1>
+   <h1 class="govuk-heading-xl">Language toggle</h1>
 
-<div class="app-example__preview">
-  <div class="govuk-form-group">
+<div class="example-box">
 
-    <!-- Single outer box (tabs container) with toggle at top -->
-    <div class="tabs-box">
+  <!-- Link bar -->
+  <div class="example-box__link-bar">
+    <a href="/path-to/language-toggle" target="_blank" rel="noopener">Open this example in a new tab</a>
+  </div>
 
-      <!-- Toggle bar at top of box -->
-      <div class="toggle-bar">
-        <ul id="navigation" class="language-toggle">
-          <li class="language-toggle__item language-toggle__item--inactive" id="eng">
-            English
-          </li>
-          <li class="language-toggle__separator">|</li>
-          <li class="language-toggle__item language-toggle__item--active" id="cym">
-            Cymraeg
-          </li>
-        </ul>
-      </div>
+  <!-- Toggle bar -->
+  <div class="toggle-bar">
+    <ul class="language-toggle">
+      <li class="language-toggle__item language-toggle__item--inactive">
+        <a href="?lang=en" lang="en">English</a>
+      </li>
+      <li class="language-toggle__separator">|</li>
+      <li class="language-toggle__item language-toggle__item--active">
+        <a href="?lang=cy" lang="cy">Cymraeg</a>
+      </li>
+    </ul>
+  </div>
 
-      <!-- Tabs inside the same box -->
-      <div class="govuk-tabs" data-module="govuk-tabs">
-        <h2 class="govuk-tabs__title">Options</h2>
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#html">HTML</a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
-          </li>
-        </ul>
+  <!-- GOVUK Tabs (inside same box!) -->
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Code</h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#html">HTML</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
+      </li>
+    </ul>
 
-        <div class="govuk-tabs__panel" id="html">
-          <pre><code class="language-html">
-&lt;div class="toggle-bar"&gt;
-  &lt;ul id="navigation" class="language-toggle"&gt;
-    &lt;li class="language-toggle__item language-toggle__item--inactive" id="eng"&gt;English&lt;/li&gt;
+    <div class="govuk-tabs__panel" id="html">
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-html">Copy code</button>
+        <pre><code id="code-html" class="language-html">&lt;div class="toggle-bar"&gt;
+  &lt;ul class="language-toggle"&gt;
+    &lt;li class="language-toggle__item language-toggle__item--inactive"&gt;
+      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
+    &lt;/li&gt;
     &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
-    &lt;li class="language-toggle__item language-toggle__item--active" id="cym"&gt;Cymraeg&lt;/li&gt;
+    &lt;li class="language-toggle__item language-toggle__item--active"&gt;
+      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
+  <div class="code-block">
+    <button class="copy-button" data-copy-target="code-nunjucks">Copy code</button>
+    <pre><code id="code-nunjucks" class="language-twig">{% raw %}
+{% set currentLang = currentLang or 'en' %}
+
+&lt;div class="toggle-bar"&gt;
+  &lt;ul class="language-toggle"&gt;
+    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'en' else 'language-toggle__item--inactive' }}"&gt;
+      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
+    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'cy' else 'language-toggle__item--inactive' }}"&gt;
+      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
-          </code></pre>
-        </div>
+{% endraw %}</code></pre>
+  </div>
+</div>
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
-          <pre><code class="language-javascript">{{ "{{ languageToggle({ active: 'cy' }) }}" }}</code></pre>
-        </div>
-      </div>
+
+  </div>
+</div>
+ 
+
+
+<!-- Include Prism.js (if using syntax highlighting) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-twig.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Prism.highlightAll();
+  });
+</script>
+
+
+
 
 
 

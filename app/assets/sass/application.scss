@@ -70,23 +70,32 @@
     vertical-align: middle;
     padding-bottom: 20px;
 }
-
-.tabs-box {
-  background-color: #ffffff;
+/* ==== Preview wrapper (the whole box) ==== */
+.example-box {
   border: 1px solid #bfc1c3;
   border-radius: 4px;
-  overflow: hidden;
-  /* you may want margin adjustments around it */
+  background-color: #fff;
+  padding: 0;
+  margin-bottom: 2em;
 }
 
-/* Toggle bar padding and separation line */
+/* ==== Top link: "Open this example" ==== */
+.example-box__link-bar {
+  padding: 1em;
+  border-bottom: 1px solid #bfc1c3;
+  background-color: #ffffff;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ==== Toggle bar (English | Cymraeg) ==== */
 .toggle-bar {
   background-color: #ffffff;
-  padding: 0.75em 1em;              /* more vertical padding for breathing room */
+  padding: 1em;
   border-bottom: 1px solid #bfc1c3;
 }
 
-/* Style for the toggle list inside toggle-bar */
+/* Toggle list (inline language links) */
 .language-toggle {
   list-style: none;
   margin: 0;
@@ -97,18 +106,17 @@
 }
 
 .language-toggle__item {
-  padding: 0.5em 0.75em;              /* add horizontal + vertical padding */
-  color: #0b0c0c;                     /* black text for non‑active */
+  padding: 0.5em 0.75em;
 }
 
-.language-toggle__item--active {
+.language-toggle__item--active a {
   color: #1d70b8;
   text-decoration: underline;
   font-weight: bold;
 }
 
-.language-toggle__item--inactive {
-  color: #0b0c0c;                      /* black, not grey */
+.language-toggle__item--inactive a {
+  color: #0b0c0c;
   text-decoration: none;
 }
 
@@ -117,18 +125,77 @@
   color: #0b0c0c;
 }
 
-/* Padding inside tabs content area */
-.tabs-box .govuk-tabs {
-  padding: 1em;
+/* Remove purple visited links */
+.language-toggle a:visited {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-/* Ensure code inside HTML tab fits / wraps */
-.govuk-tabs__panel code {
+/* ==== Tabs section ==== */
+.govuk-tabs {
+  margin-top: 0.5em;
+  margin: 0;
+  border-top: none;
+}
+
+/* Tabs list */
+.govuk-tabs__list {
+  margin: 0;
+  border-top: 1px solid #bfc1c3;
+  border-bottom: none;
+}
+
+/* Tabs panel */
+.govuk-tabs__panel {
+  padding: 1em;
+  border-top: 1px solid #bfc1c3;
+  border-bottom: none; /* Important: prevent extra line */
+  margin: 0;
+}
+
+/* ==== Code block box ==== */
+.code-block {
+  background: #f3f2f1;
+  border: 1px solid #bfc1c3;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+  overflow-x: auto;
+  margin-top: 1em;
+}
+
+/* Ensure pre/code wraps */
+.code-block pre {
+  margin: 0;
   white-space: pre-wrap;
   word-wrap: break-word;
-  display: block;
   overflow-x: auto;
 }
+
+/* ==== Copy code button ==== */
+.copy-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: #fff;
+  border: 1px solid #00703c;
+  color: #00703c;
+  padding: 0.25em 0.75em;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.copy-button:hover {
+  background: #00703c;
+  color: white;
+}
+
+.copy-button:focus {
+  outline: 2px solid #00703c;
+  outline-offset: 2px;
+}
+
 
 
 
