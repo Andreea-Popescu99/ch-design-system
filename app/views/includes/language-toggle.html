@@ -1,10 +1,11 @@
+{% set currentLang = currentLang or 'en' %}
+
 <ul id="navigation" class="language-toggle">
-  <li class="" id="eng">
-    English<span>|</span>
+  <li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'en' else 'language-toggle__item--inactive' }}">
+    <a href="?lang=en" lang="en">English</a>
   </li>
-  <li>
-    <a href="javascript:void(0)" id="cym">Cymraeg</a>
+  <li class="language-toggle__separator">|</li>
+  <li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'cy' else 'language-toggle__item--inactive' }}">
+    <a href="?lang=cy" lang="cy">Cymraeg</a>
   </li>
 </ul>
-
-  <hr class="govuk-section-break govuk-section-break--visible">

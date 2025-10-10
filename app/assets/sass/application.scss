@@ -82,7 +82,7 @@
 /* ==== Top link: "Open this example" ==== */
 .example-box__link-bar {
   padding: 1em;
-  border-bottom: 1px solid #bfc1c3;
+  border-bottom: 0.5px solid #bfc1c3;
   background-color: #ffffff;
   margin: 0;
   font-size: 1rem;
@@ -105,18 +105,20 @@
   font-size: 1rem;
 }
 
-.language-toggle__item {
+.language-toggle__item a {
+  color:inherit;
   padding: 0.5em 0.75em;
+  text-decoration: none;
 }
 
 .language-toggle__item--active a {
-  color: #1d70b8;
+  color: #1d70b8 !important;
   text-decoration: underline;
   font-weight: bold;
 }
 
 .language-toggle__item--inactive a {
-  color: #0b0c0c;
+  color: #0b0c0c !important;
   text-decoration: none;
 }
 
@@ -125,10 +127,10 @@
   color: #0b0c0c;
 }
 
-/* Remove purple visited links */
+
 .language-toggle a:visited {
-  color: inherit;
-  text-decoration: inherit;
+  color: #1d70b8;
+  
 }
 
 /* ==== Tabs section ==== */
@@ -141,15 +143,15 @@
 /* Tabs list */
 .govuk-tabs__list {
   margin: 0;
-  border-top: 1px solid #bfc1c3;
+
   border-bottom: none;
 }
 
 /* Tabs panel */
 .govuk-tabs__panel {
   padding: 1em;
-  border-top: 1px solid #bfc1c3;
-  border-bottom: none; /* Important: prevent extra line */
+  border-top: 0.5px solid #bfc1c3;
+  border-bottom: none; 
   margin: 0;
 }
 
