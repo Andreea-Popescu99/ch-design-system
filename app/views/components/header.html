@@ -107,66 +107,63 @@
 }) }}
 
 
-
-
-
-
-
-
   <!-- GOVUK Tabs (inside same box!) -->
   <div class="govuk-tabs" data-module="govuk-tabs">
-    <h2 class="govuk-tabs__title">Code</h2>
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="#html">HTML</a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
-      </li>
-    </ul>
+  <h2 class="govuk-tabs__title">Code</h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#govuk-html">HTML</a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#govuk-nunjucks">Nunjucks</a>
+    </li>
+  </ul>
 
-    <div class="govuk-tabs__panel" id="html">
-      <div class="code-block">
-        <button class="copy-button" data-copy-target="code-html">Copy code</button>
-        <pre><code id="code-html" class="language-html">&lt;div class="toggle-bar"&gt;
-  &lt;ul class="language-toggle"&gt;
-    &lt;li class="language-toggle__item language-toggle__item--inactive"&gt;
-      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
-    &lt;li class="language-toggle__item language-toggle__item--active"&gt;
-      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-    </div>
-
-   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
+    <div class="govuk-tabs__panel" id="govuk-html">
   <div class="code-block">
-    <button class="copy-button" data-copy-target="code-nunjucks">Copy code</button>
-    <pre><code id="code-nunjucks" class="language-twig">{% raw %}
-{% set currentLang = currentLang or 'en' %}
+    <button class="copy-button" data-copy-target="code-html">Copy code</button>
+    <pre><code id="code-html" class="language-html">&lt;header class="govuk-header" data-module="govuk-header"&gt;
+  &lt;div class="govuk-header__container govuk-width-container"&gt;
+    &lt;div class="govuk-header__logo"&gt;
+      &lt;a href="/" class="govuk-header__link govuk-header__link--homepage"&gt;
+        &lt;svg focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 60" height="30" width="162" fill="currentColor" class="govuk-header__logotype" aria-label="GOV.UK"&gt;
+          &lt;title&gt;GOV.UK&lt;/title&gt;
+          &lt;circle cx="20" cy="17.6" r="3.7" /&gt;
+          &lt;circle cx="10.2" cy="23.5" r="3.7" /&gt;
+          &lt;circle cx="3.7" cy="33.2" r="3.7" /&gt;
+          &lt;circle cx="31.7" cy="30.6" r="3.7" /&gt;
+          &lt;circle cx="43.3" cy="17.6" r="3.7" /&gt;
+          &lt;circle cx="53.2" cy="23.5" r="3.7" /&gt;
+          &lt;circle cx="59.7" cy="33.2" r="3.7" /&gt;
+        &lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+  </div>
+</div>
 
-&lt;div class="toggle-bar"&gt;
-  &lt;ul class="language-toggle"&gt;
-    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'en' else 'language-toggle__item--inactive' }}"&gt;
-      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
-    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'cy' else 'language-toggle__item--inactive' }}"&gt;
-      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="govuk-nunjucks">
+    <div class="code-block">
+      <button class="copy-button" data-copy-target="code-govuk-nunjucks">Copy code</button>
+      <pre><code id="code-govuk-nunjucks" class="language-twig">{% raw %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Your Service Name",
+  serviceUrl: "/"
+}) }}
 {% endraw %}</code></pre>
   </div>
 </div>
 
 
+
   </div>
 </div>
 
+<!-- CH Header -->
  <h1 class="govuk-heading-xl">
       Companies House Header
     </h1>
@@ -210,50 +207,53 @@
 
   <!-- GOVUK Tabs (inside same box!) -->
   <div class="govuk-tabs" data-module="govuk-tabs">
-    <h2 class="govuk-tabs__title">Code</h2>
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        <a class="govuk-tabs__tab" href="#html">HTML</a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
-      </li>
-    </ul>
+  <h2 class="govuk-tabs__title">Code</h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#ch-html">HTML</a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#ch-nunjucks">Nunjucks</a>
+    </li>
+  </ul>
 
-    <div class="govuk-tabs__panel" id="html">
-      <div class="code-block">
-        <button class="copy-button" data-copy-target="code-html">Copy code</button>
-        <pre><code id="code-html" class="language-html">&lt;div class="toggle-bar"&gt;
-  &lt;ul class="language-toggle"&gt;
-    &lt;li class="language-toggle__item language-toggle__item--inactive"&gt;
-      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
-    &lt;li class="language-toggle__item language-toggle__item--active"&gt;
-      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-    </div>
+    <div class="govuk-tabs__panel" id="ch-html">
+    <div class="code-block">
+      <button class="copy-button" data-copy-target="code-ch-html">Copy code</button>
+      <pre><code id="code-ch-html" class="language-html">&lt;header class="ch-header" role="banner"&gt;
+  &lt;div class="ch-header__container"&gt;
+    &lt;a href="/" class="ch-header__link"&gt;
+      &lt;svg aria-hidden="true" focusable="false"
+           class="moj-header__logotype-crest"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 40 40"
+           width="40"
+           height="40"&gt;
+        &lt;path d="M10 10 L 50 10 L 50 50 L 10 50 Z" /&gt;
+      &lt;/svg&gt;
+      &lt;img
+        src="/public/images/royal-coat-of-arms-white.png"
+        alt="Companies House crest"
+        width="40"
+        height="40"
+        class="moj-header__logotype-crest" /&gt;
+      &lt;span class="ch-header__name"&gt;Companies House&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+  </div>
+</div>
 
-   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
-  <div class="code-block">
-    <button class="copy-button" data-copy-target="code-nunjucks">Copy code</button>
-    <pre><code id="code-nunjucks" class="language-twig">{% raw %}
-{% set currentLang = currentLang or 'en' %}
+   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ch-nunjucks">
+    <div class="code-block">
+      <button class="copy-button" data-copy-target="code-ch-nunjucks">Copy code</button>
+      <pre><code id="code-ch-nunjucks" class="language-twig">{% raw %}
+{% from "components/ch-header/macro.njk" import chHeader %}
 
-&lt;div class="toggle-bar"&gt;
-  &lt;ul class="language-toggle"&gt;
-    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'en' else 'language-toggle__item--inactive' }}"&gt;
-      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
-    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'cy' else 'language-toggle__item--inactive' }}"&gt;
-      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+{{ chHeader({
+  homepageUrl: "/",
+  serviceName: "Companies House"
+}) }}
 {% endraw %}</code></pre>
   </div>
 </div>

@@ -1,22 +1,23 @@
-//
 // For guidance on how to add JavaScript see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-//
 
 window.GOVUKPrototypeKit.documentReady(() => {
-  // Add JavaScript here
-})
 
-window.MOJFrontend.initAll();
+  // Reload function (if needed)
+  function reload () {
+    location.reload();
+  }
 
-function reload() {
-  location.reload();
-}
+  // Initialise GOVUK and MOJ Frontend
+  if (window.GOVUKFrontend && typeof window.GOVUKFrontend.initAll === 'function') {
+    window.GOVUKFrontend.initAll();
+  }
 
+  if (window.MOJFrontend && typeof window.MOJFrontend.initAll === 'function') {
+    window.MOJFrontend.initAll();
+  }
 
-
- document.addEventListener('DOMContentLoaded', function () {
-  // Copy button logic
+  // ✅ Copy button logic
   document.querySelectorAll('.copy-button').forEach(button => {
     button.addEventListener('click', async () => {
       const targetId = button.getAttribute('data-copy-target');
@@ -36,7 +37,7 @@ function reload() {
     });
   });
 
-  // Language toggle logic
+  // ✅ Language toggle logic
   const urlParams = new URLSearchParams(window.location.search);
   const lang = urlParams.get('lang') || 'en';
 
@@ -57,6 +58,4 @@ function reload() {
     }
   }
 });
-
-
 
