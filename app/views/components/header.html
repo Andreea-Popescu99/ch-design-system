@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-
+{% from "govuk/components/header/macro.njk" import govukHeader %}
 {% block pageTitle %}
 {{ serviceName }} - Header
 {% endblock %}
@@ -88,10 +88,207 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Header
+      GOV.UK Header
     </h1>
 
+<div class="example-box">
 
+  <!-- Link bar -->
+  <div class="example-box__link-bar">
+    <a href="https://design-system.service.gov.uk/components/header/" target="_blank" rel="noopener">Open this example in a new tab</a>
+  </div>
+
+  <!-- GOVUK Header -->
+
+{{ govukHeader({
+  homepageUrl: "/",
+  serviceName: "Your Service Name",
+  serviceUrl: "/"
+}) }}
+
+
+
+
+
+
+
+
+  <!-- GOVUK Tabs (inside same box!) -->
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Code</h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#html">HTML</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
+      </li>
+    </ul>
+
+    <div class="govuk-tabs__panel" id="html">
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-html">Copy code</button>
+        <pre><code id="code-html" class="language-html">&lt;div class="toggle-bar"&gt;
+  &lt;ul class="language-toggle"&gt;
+    &lt;li class="language-toggle__item language-toggle__item--inactive"&gt;
+      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
+    &lt;li class="language-toggle__item language-toggle__item--active"&gt;
+      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
+  <div class="code-block">
+    <button class="copy-button" data-copy-target="code-nunjucks">Copy code</button>
+    <pre><code id="code-nunjucks" class="language-twig">{% raw %}
+{% set currentLang = currentLang or 'en' %}
+
+&lt;div class="toggle-bar"&gt;
+  &lt;ul class="language-toggle"&gt;
+    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'en' else 'language-toggle__item--inactive' }}"&gt;
+      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
+    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'cy' else 'language-toggle__item--inactive' }}"&gt;
+      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+{% endraw %}</code></pre>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+ <h1 class="govuk-heading-xl">
+      Companies House Header
+    </h1>
+
+<div class="example-box">
+
+  <!-- Link bar -->
+  <div class="example-box__link-bar">
+    <a href="https://idam-ui.company-information.service.gov.uk/account/login/" target="_blank" rel="noopener">Open this example in a new tab</a>
+  </div>
+
+  <header class="ch-header" role="banner">
+  <div class="ch-header__container">
+    <a href="/" class="ch-header__link">
+      <svg aria-hidden="true" focusable="false"
+           class="moj-header__logotype-crest"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 40 40"
+           width="40"
+           height="40">
+        <path d="M10 10 L 50 10 L 50 50 L 10 50 Z" />
+        <img
+  src="/public/images/royal-coat-of-arms-white.png"
+  alt="Companies House crest"
+  width="40"
+  height="40"
+  class="moj-header__logotype-crest" />
+
+      </svg>
+      <span class="ch-header__name">Companies House</span>
+    </a>
+  </div>
+</header>
+
+
+
+
+</div>
+
+
+
+  <!-- GOVUK Tabs (inside same box!) -->
+  <div class="govuk-tabs" data-module="govuk-tabs">
+    <h2 class="govuk-tabs__title">Code</h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#html">HTML</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#nunjucks">Nunjucks</a>
+      </li>
+    </ul>
+
+    <div class="govuk-tabs__panel" id="html">
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-html">Copy code</button>
+        <pre><code id="code-html" class="language-html">&lt;div class="toggle-bar"&gt;
+  &lt;ul class="language-toggle"&gt;
+    &lt;li class="language-toggle__item language-toggle__item--inactive"&gt;
+      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
+    &lt;li class="language-toggle__item language-toggle__item--active"&gt;
+      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+    </div>
+
+   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="nunjucks">
+  <div class="code-block">
+    <button class="copy-button" data-copy-target="code-nunjucks">Copy code</button>
+    <pre><code id="code-nunjucks" class="language-twig">{% raw %}
+{% set currentLang = currentLang or 'en' %}
+
+&lt;div class="toggle-bar"&gt;
+  &lt;ul class="language-toggle"&gt;
+    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'en' else 'language-toggle__item--inactive' }}"&gt;
+      &lt;a href="?lang=en" lang="en"&gt;English&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="language-toggle__separator"&gt;|&lt;/li&gt;
+    &lt;li class="language-toggle__item {{ 'language-toggle__item--active' if currentLang == 'cy' else 'language-toggle__item--inactive' }}"&gt;
+      &lt;a href="?lang=cy" lang="cy"&gt;Cymraeg&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+{% endraw %}</code></pre>
+  </div>
+</div>
+
+
+  </div>
+</div>
+ 
+
+
+<!-- Include Prism.js (if using syntax highlighting) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-twig.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Prism.highlightAll();
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  </div>
+</div>
   
   </div>
 </div>

@@ -197,7 +197,44 @@
   outline: 2px solid #00703c;
   outline-offset: 2px;
 }
+/* ==== Headers  ==== */
+/* GOV.UK and your CSS must be present; here’s the CH part */
 
+.ch-header {
+  background-color: #0b0c0c;
+  width: 100%;
+  padding: 10px 0;
+   border-bottom: 10px solid #1d70b8;
+
+}
+
+.ch-header__container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.ch-header__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.ch-header__name {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Ensure fallback image in SVG is visible (if needed) */
+.moj-header__logotype-crest-fallback-image {
+  /* You might need display: block; or ensure it’s not hidden */
+  display: block;
+}
 
 
 
