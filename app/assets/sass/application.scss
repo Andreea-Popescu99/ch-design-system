@@ -236,6 +236,35 @@
   display: block;
 }
 
+.account-banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  padding: 5px 5px; // 
+  border-bottom: 1px solid #b1b4b6;
+  font-size: 14px;
+  gap: 12px;
+
+  .govuk-body-s {
+    margin: 0;
+    white-space: nowrap;
+   
+  }
+
+  a.govuk-link {
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+
 
 
 

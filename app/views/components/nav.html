@@ -88,8 +88,66 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      Nav
+      Account banner
     </h1>
+
+  <div class="example-box">
+
+    <!-- Component: Account Banner -->
+    <div class="govuk-!-margin-top-4 account-banner">
+  <span class="govuk-body-s">{{ data['emailAddress'] or "example@email.com" }}:</span>
+  <a href="#" class="govuk-link">Manage account</a>
+  <a href="#" class="govuk-link">Your filings</a>
+  <a href="#" class="govuk-link">Companies you follow</a>
+  <a href="#" class="govuk-link">Basket (0)</a>
+  <a href="#" class="govuk-link">Sign out</a>
+</div>
+
+
+    <!-- GOV.UK Tabs for HTML / Nunjucks -->
+    <div class="govuk-tabs govuk-!-margin-top-6" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">Code</h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#account-html">HTML</a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#account-nunjucks">Nunjucks</a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel" id="account-html">
+        <div class="code-block">
+          <button class="copy-button" data-copy-target="code-account-html">Copy code</button>
+          <pre><code id="code-account-html" class="language-html">&lt;div class="govuk-!-margin-top-4 account-banner"&gt;
+  &lt;span class="govuk-body-s" style="padding-right: 20px;"&gt;example@email.com:&lt;/span&gt;
+  &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Manage account&lt;/a&gt;&lt;/span&gt;
+  &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Your filings&lt;/a&gt;&lt;/span&gt;
+  &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Companies you follow&lt;/a&gt;&lt;/span&gt;
+  &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Basket(0)&lt;/a&gt;&lt;/span&gt;
+  &lt;a href="#"&gt;Sign out&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="account-nunjucks">
+  <div class="code-block">
+    <button class="copy-button" data-copy-target="code-account-nunjucks">Copy code</button>
+    <pre><code id="code-account-nunjucks" class="language-twig">{% raw %}
+{% macro accountBanner(email) %}
+  &lt;div class="govuk-!-margin-top-4 account-banner"&gt;
+    &lt;span class="govuk-body-s" style="padding-right: 20px;"&gt;{{ email or "example@email.com" }}:&lt;/span&gt;
+    &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Manage account&lt;/a&gt;&lt;/span&gt;
+    &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Your filings&lt;/a&gt;&lt;/span&gt;
+    &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Companies you follow&lt;/a&gt;&lt;/span&gt;
+    &lt;span style="padding-right: 20px;"&gt;&lt;a href="#" class="govuk-link"&gt;Basket(0)&lt;/a&gt;&lt;/span&gt;
+    &lt;a href="#" class="govuk-link"&gt;Sign out&lt;/a&gt;
+  &lt;/div&gt;
+{% endmacro %}
+{% endraw %}</code></pre>
+  </div>
+</div>
+
 
 
   
