@@ -91,62 +91,44 @@
       GOV.UK Header
     </h1>
 
-<div class="example-box">
-
+<div class="component-preview">
   <!-- Link bar -->
-  <div class="example-box__link-bar">
+  <div class="component-preview__link-bar">
     <a href="https://design-system.service.gov.uk/components/header/" target="_blank" rel="noopener">Open this example in a new tab</a>
   </div>
 
   <!-- GOVUK Header -->
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Your Service Name",
+    serviceUrl: "/"
+  }) }}
 
-{{ govukHeader({
-  homepageUrl: "/",
-  serviceName: "Your Service Name",
-  serviceUrl: "/"
-}) }}
-
-
-  <!-- GOVUK Tabs (inside same box!) -->
+  <!-- Tabs -->
   <div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">Code</h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#govuk-html">HTML</a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#govuk-nunjucks">Nunjucks</a>
-    </li>
-  </ul>
+    <h2 class="govuk-tabs__title">Code</h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#govuk-html">HTML</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#govuk-nunjucks">Nunjucks</a>
+      </li>
+    </ul>
 
     <div class="govuk-tabs__panel" id="govuk-html">
-  <div class="code-block">
-    <button class="copy-button" data-copy-target="code-html">Copy code</button>
-    <pre><code id="code-html" class="language-html">&lt;header class="govuk-header" data-module="govuk-header"&gt;
-  &lt;div class="govuk-header__container govuk-width-container"&gt;
-    &lt;div class="govuk-header__logo"&gt;
-      &lt;a href="/" class="govuk-header__link govuk-header__link--homepage"&gt;
-        &lt;svg focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 60" height="30" width="162" fill="currentColor" class="govuk-header__logotype" aria-label="GOV.UK"&gt;
-          &lt;title&gt;GOV.UK&lt;/title&gt;
-          &lt;circle cx="20" cy="17.6" r="3.7" /&gt;
-          &lt;circle cx="10.2" cy="23.5" r="3.7" /&gt;
-          &lt;circle cx="3.7" cy="33.2" r="3.7" /&gt;
-          &lt;circle cx="31.7" cy="30.6" r="3.7" /&gt;
-          &lt;circle cx="43.3" cy="17.6" r="3.7" /&gt;
-          &lt;circle cx="53.2" cy="23.5" r="3.7" /&gt;
-          &lt;circle cx="59.7" cy="33.2" r="3.7" /&gt;
-        &lt;/svg&gt;
-      &lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-html">Copy code</button>
+        <pre><code id="code-html" class="language-html">&lt;header class="govuk-header" data-module="govuk-header"&gt;
+  ...
 &lt;/header&gt;</code></pre>
-  </div>
-</div>
+      </div>
+    </div>
 
     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="govuk-nunjucks">
-    <div class="code-block">
-      <button class="copy-button" data-copy-target="code-govuk-nunjucks">Copy code</button>
-      <pre><code id="code-govuk-nunjucks" class="language-twig">{% raw %}
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-govuk-nunjucks">Copy code</button>
+        <pre><code id="code-govuk-nunjucks" class="language-twig">{% raw %}
 {% from "govuk/components/header/macro.njk" import govukHeader %}
 
 {{ govukHeader({
@@ -155,99 +137,71 @@
   serviceUrl: "/"
 }) }}
 {% endraw %}</code></pre>
+      </div>
+    </div>
   </div>
 </div>
 
-
-
-  </div>
-</div>
 
 <!-- CH Header -->
  <h1 class="govuk-heading-xl">
       Companies House Header
     </h1>
 
-<div class="example-box">
-
+<div class="component-preview">
   <!-- Link bar -->
-  <div class="example-box__link-bar">
+  <div class="component-preview__link-bar">
     <a href="https://idam-ui.company-information.service.gov.uk/account/login/" target="_blank" rel="noopener">Open this example in a new tab</a>
   </div>
 
+  <!-- CH Header -->
   <header class="ch-header" role="banner">
-  <div class="ch-header__container">
-    <a href="/" class="ch-header__link">
-      <svg aria-hidden="true" focusable="false"
-           class="moj-header__logotype-crest"
-           xmlns="http://www.w3.org/2000/svg"
-           viewBox="0 0 40 40"
-           width="40"
-           height="40">
-        <path d="M10 10 L 50 10 L 50 50 L 10 50 Z" />
+    <div class="ch-header__container">
+      <a href="/" class="ch-header__link">
+        <svg aria-hidden="true" focusable="false"
+             class="moj-header__logotype-crest"
+             xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 40 40"
+             width="40"
+             height="40">
+          <path d="M10 10 L 50 10 L 50 50 L 10 50 Z" />
+        </svg>
         <img
-  src="/public/images/royal-coat-of-arms-white.png"
-  alt="Companies House crest"
-  width="40"
-  height="40"
-  class="moj-header__logotype-crest" />
+          src="/public/images/royal-coat-of-arms-white.png"
+          alt="Companies House crest"
+          width="40"
+          height="40"
+          class="moj-header__logotype-crest" />
+        <span class="ch-header__name">Companies House</span>
+      </a>
+    </div>
+  </header>
 
-      </svg>
-      <span class="ch-header__name">Companies House</span>
-    </a>
-  </div>
-</header>
-
-
-
-
-</div>
-
-
-
-  <!-- GOVUK Tabs (inside same box!) -->
+  <!-- Tabs -->
   <div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">Code</h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#ch-html">HTML</a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#ch-nunjucks">Nunjucks</a>
-    </li>
-  </ul>
+    <h2 class="govuk-tabs__title">Code</h2>
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#ch-html">HTML</a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#ch-nunjucks">Nunjucks</a>
+      </li>
+    </ul>
 
     <div class="govuk-tabs__panel" id="ch-html">
-    <div class="code-block">
-      <button class="copy-button" data-copy-target="code-ch-html">Copy code</button>
-      <pre><code id="code-ch-html" class="language-html">&lt;header class="ch-header" role="banner"&gt;
-  &lt;div class="ch-header__container"&gt;
-    &lt;a href="/" class="ch-header__link"&gt;
-      &lt;svg aria-hidden="true" focusable="false"
-           class="moj-header__logotype-crest"
-           xmlns="http://www.w3.org/2000/svg"
-           viewBox="0 0 40 40"
-           width="40"
-           height="40"&gt;
-        &lt;path d="M10 10 L 50 10 L 50 50 L 10 50 Z" /&gt;
-      &lt;/svg&gt;
-      &lt;img
-        src="/public/images/royal-coat-of-arms-white.png"
-        alt="Companies House crest"
-        width="40"
-        height="40"
-        class="moj-header__logotype-crest" /&gt;
-      &lt;span class="ch-header__name"&gt;Companies House&lt;/span&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-ch-html">Copy code</button>
+        <pre><code id="code-ch-html" class="language-html">&lt;header class="ch-header" role="banner"&gt;
+  ...
 &lt;/header&gt;</code></pre>
-  </div>
-</div>
+      </div>
+    </div>
 
-   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ch-nunjucks">
-    <div class="code-block">
-      <button class="copy-button" data-copy-target="code-ch-nunjucks">Copy code</button>
-      <pre><code id="code-ch-nunjucks" class="language-twig">{% raw %}
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ch-nunjucks">
+      <div class="code-block">
+        <button class="copy-button" data-copy-target="code-ch-nunjucks">Copy code</button>
+        <pre><code id="code-ch-nunjucks" class="language-twig">{% raw %}
 {% from "components/ch-header/macro.njk" import chHeader %}
 
 {{ chHeader({
@@ -255,12 +209,11 @@
   serviceName: "Companies House"
 }) }}
 {% endraw %}</code></pre>
+      </div>
+    </div>
   </div>
 </div>
 
-
-  </div>
-</div>
  
 
 

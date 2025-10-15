@@ -71,22 +71,7 @@
     padding-bottom: 20px;
 }
 /* ==== Preview wrapper (the whole box) ==== */
-.example-box {
-  border: 1px solid #bfc1c3;
-  border-radius: 4px;
-  background-color: #fff;
-  padding: 0;
-  margin-bottom: 2em;
-}
 
-/* ==== Top link: "Open this example" ==== */
-.example-box__link-bar {
-  padding: 1em;
-  border-bottom: 0.5px solid #bfc1c3;
-  background-color: #ffffff;
-  margin: 0;
-  font-size: 1rem;
-}
 
 /* ==== Toggle bar (English | Cymraeg) ==== */
 .toggle-bar {
@@ -135,9 +120,8 @@
 
 /* ==== Tabs section ==== */
 .govuk-tabs {
-  margin-top: 0.5em;
-  margin: 0;
-  border-top: none;
+  margin-top: 0 !important;
+  border-top: none !important;
 }
 
 /* Tabs list */
@@ -146,6 +130,12 @@
 
   border-bottom: none;
 }
+
+.govuk-tabs__list-item--selected {
+  border-bottom: 4px solid #1d70b8;
+  margin-top: 0px;
+}
+
 
 /* Tabs panel */
 .govuk-tabs__panel {
@@ -265,6 +255,54 @@
 }
 
 
+
+/* === Combined preview container === */
+.component-preview {
+  border: 1px solid #bfc1c3;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 2em;
+  overflow: hidden;
+}
+
+/* Top link bar */
+.component-preview__link-bar {
+  padding: 1em;
+  border-bottom: 1px solid #bfc1c3;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+/* Language preview section */
+.language-toggle-preview {
+  padding: 1em;
+  border-bottom: 1px solid #bfc1c3;
+  background-color: #fff;
+}
+
+/* Tabs inside same box */
+.component-preview__tabs {
+  margin: 0;
+  border-top: none;
+}
+
+/* Remove default tab list border */
+.govuk-tabs__list {
+  border-bottom: none;
+  margin: 0;
+}
+
+/* Tab panel styling */
+.govuk-tabs__panel {
+  padding: 1em;
+  border-top: 1px solid #bfc1c3;
+  margin: 0;
+}
+
+/* Optional: ensure tabs don’t have extra line above */
+.govuk-tabs__tab {
+  border: none;
+}
 
 
 
